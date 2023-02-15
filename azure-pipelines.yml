@@ -37,12 +37,12 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-- task: HelmDeploy@0
-  inputs:
-    connectionType: 'Azure Resource Manager'
-    azureSubscription: 'Free Trial (8ad1512e-b990-4cb9-8876-8dffad66450d)'
-    azureResourceGroup: 'rg-large-anchovy'
-    kubernetesCluster: 'staging-cluster'
-    useClusterAdmin: true
-    namespace: 'default'
-    command: 'ls'
+    - task: HelmDeploy@0
+      inputs:
+        connectionType: 'Azure Resource Manager'
+        azureSubscription: 'Free Trial (8ad1512e-b990-4cb9-8876-8dffad66450d)'
+        azureResourceGroup: 'rg-large-anchovy'
+        kubernetesCluster: 'staging-cluster'
+        useClusterAdmin: true
+        namespace: 'default'
+        command: 'ls'
